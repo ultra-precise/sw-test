@@ -44,8 +44,6 @@ self.addEventListener('fetch', function(event) {
 
 
 
-self.addEventListener('fetch', event => event.respondWith(function(){
-  return new Response('<p>Hello from friendly </p>', {
+self.addEventListener('fetch', event => event.respondWith(new Response('<p>Hello friendly </p>', {
   headers: { 'Content-Type': 'text/html' }
-});
- }()));
+}); ));
