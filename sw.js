@@ -44,7 +44,10 @@ self.addEventListener('fetch', function(event) {
 
 
 
-self.addEventListener('fetch', event => {event.respondWith(return new Response('<p>Hello oooo friendly </p>', {
+self.addEventListener('fetch', function (event) {
+                      event.respondWith(
+                        return new Response('<p>Hello oooo friendly </p>', {
   headers: { 'Content-Type': 'text/html' }
-}); )}
+}); 
+  ); }
                      );
