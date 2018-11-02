@@ -9,6 +9,10 @@ if ('serviceWorker' in navigator) {
       console.log('Service worker installed');
     } else if(reg.active) {
       console.log('Service worker active');
+      
+        appsw(); 
+    
+}
     }
 
   }).catch(function(error) {
@@ -48,7 +52,7 @@ function imgLoad(imgJSON) {
 
 var imgSection = document.querySelector('section');
 
-window.onload = function() {
+function appsw() {
 
   // load each set of image, alt text, name and caption
   for(var i = 0; i<=Gallery.images.length-1; i++) {
