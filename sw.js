@@ -52,7 +52,7 @@ self.addEventListener('activate', function (event)
 
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
-var ab = new Response(event.request.url + "Name");
+var ab = new Response("new" + "Name");
     return ab;
   }());
 });
