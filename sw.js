@@ -66,7 +66,7 @@ var ar = [];
     
    
     var ab = new Response(
-    `${gg} <p>Hopo from your friendly neighbourhood service worker! ${ar.join()}</p>`, {
+    `${gg} <p<next from your friendly neighbourhood service worker! ${ar.join()}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
