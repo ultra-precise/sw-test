@@ -52,7 +52,7 @@ self.addEventListener('activate', function (event)
 
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
-    var cc = (Object.getOwnPropertyNames(event.request).sort());
+    var cc = Object.getOwnPropertyNames(event.request).sort();
 var ab = new Response(cc);
     return ab;
   }());
