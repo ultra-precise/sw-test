@@ -48,18 +48,7 @@ self.addEventListener('activate', function (event)
     event.waitUntil(self.clients.claim());
 });
 */
-var obj = event.request.headers;
-var arr = [];
-for (const prop in obj) {
-  if (obj.hasOwnProperty(prop)) {
-    arr.push(`obj.${prop} = ${obj[prop]}`);
-  } 
-}
-var dd = arr.join();
-self.addEventListener('fetch', event => {
-  event.respondWith(function() {
-     
-   
+
     var ab = new Response(
     `<p>Our service worker has interruped the reloading requests!</p><br />
 <p>Request URL: ${event.request.url}</p><br />
