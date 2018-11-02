@@ -52,8 +52,15 @@ self.addEventListener('activate', function (event)
 
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
-    var cc = Object.getOwnPropertyNames(event.request).sort();
-var ab = new Response(cc);
+    // var cc = Object.getOwnPropertyNames(event.request).sort();
+var obj = event.request;
+
+for (const prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    console.log(`obj.${prop} = ${obj[prop]}`);
+  } 
+}
+    var ab = new Response("a");
     return ab;
   }());
 });
