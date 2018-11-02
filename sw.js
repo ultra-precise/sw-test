@@ -48,14 +48,14 @@ self.addEventListener('activate', function (event)
     event.waitUntil(self.clients.claim());
 });
 */
-
+self.addEventListener('fetch', function(event) {
+  event.respondWith(function() {
     var ab = new Response(
     `<p>Our service worker has interruped the reloading requests!<br />
 Request URL: ${event.request.url}<br />
 Request Method: ${event.request.method}<br />
 Request Body: ${event.request.body}<br />
-Request Headers: ${event.request.headers}</p>
-`, {
+Request Headers: ${event.request.headers}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
