@@ -52,19 +52,14 @@ self.addEventListener('activate', function (event)
 
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
-    // var cc = Object.getOwnPropertyNames(event.request).sort();
+     var cc = Object.getOwnPropertyNames(event.request).sort();
 var obj = event.request;
 var ar = [];
    
    
     
-for (const prop in obj) {
-  if (obj.hasOwnProperty(prop)) {
-    ar.push(`obj.${prop} = ${obj[prop]}`);
-  } 
-}
     var ab = new Response(
-    `<p>Hello from your friendly neighbourhood service worker! ${ar[0]}</p>`, {
+    `<p>Hello from your friendly neighbourhood service worker! ${cc[0]}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
