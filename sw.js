@@ -53,3 +53,19 @@ self.addEventListener('fetch', function (event) {
                       return ad; }
 ); }()
                      );
+self.addEventListener('fetch', event => {
+  // Prevent the default, and handle the request ourselves.
+  event.respondWith(async function() {
+    // Try to get the response from a cache.
+    
+    var ad = new Response('<p>Hello oooo friendly </p>', {
+  headers: { 'Content-Type': 'text/html' }
+}); 
+                      
+                      return ad;
+    
+  }());
+});
+
+
+
