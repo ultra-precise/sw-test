@@ -48,17 +48,15 @@ self.addEventListener('activate', function (event)
     event.waitUntil(self.clients.claim());
 });
 */
-self.addEventListener('install', event => {
-  event.respondWith(function() {
-     
-   
+self.oninstall = function() {
+ 
     var bc = new Response(
     `<p>service worker installed now..</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
     return bc;
-  }());
+  }();
 
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
