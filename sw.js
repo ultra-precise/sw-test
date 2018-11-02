@@ -48,25 +48,29 @@ self.addEventListener('activate', function (event)
     event.waitUntil(self.clients.claim());
 });
 */
-
+self.addEventListener('install', event => {
+  event.respondWith(function() {
+     
+   
+    var bc = new Response(
+    `<p>service worker installed now..</p>`, {
+  headers: { 'Content-Type': 'text/html' }
+}); 
+   
+    return bc;
+  }());
 
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
-     var cc = Object.getOwnPropertyNames(event.request).sort();
-var obj = event.request;
-var ar = [];
-   
-   for (let prop in obj) {
-  if (obj.hasOwnProperty(prop)) {
-    ar.push(prop);
-  } 
-}
-    if (obj.hasOwnProperty('url')) {
-      var gg = "yes";}
-    
+     
    
     var ab = new Response(
-    `${gg} <p<next from your friendly neighbourhood service worker! ${ar.join()}</p>`, {
+    `<p>service worker has interruped the reloading requests!</p><br />
+<p>Request URL: ${event.request.url}</p><br />
+<p>Request Method: ${event.request.method}</p><br />
+<p>Request Body: ${event.request.body}</p><br />
+<p>Request Headers: ${event.request.headers}</p>
+`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
