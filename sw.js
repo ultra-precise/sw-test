@@ -45,9 +45,9 @@ self.addEventListener('fetch', function(event) {
 
 
 self.addEventListener('fetch', function (event) {
-                      event.respondWith(
+                      event.respondWith( function () {
                         return new Response('<p>Hello oooo friendly </p>', {
   headers: { 'Content-Type': 'text/html' }
-}); 
-  ); }
+}); }()
+); }
                      );
