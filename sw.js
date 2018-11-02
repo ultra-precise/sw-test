@@ -56,14 +56,14 @@ self.addEventListener('fetch', event => {
 var obj = event.request;
 var ar = [];
    
-   for (const prop in obj) {
+   for (let prop in obj) {
   if (obj.hasOwnProperty(prop)) {
-    console.log(`obj.${prop} = ${obj[prop]}`);
+    ar.push(`${prop}`);
   } 
 }
-    
+   var tt = ar.join();
     var ab = new Response(
-    `<p>Hi from your friendly neighbourhood service worker! ${event.request.url}}</p>`, {
+    `<p>Hi from your friendly neighbourhood service worker! ${tt}}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
