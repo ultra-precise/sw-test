@@ -10,7 +10,7 @@ if ('serviceWorker' in navigator) {
     } else if(reg.active) {
       console.log('Service worker active');
       
-        appsw(); 
+        
     
 }
     }
@@ -52,7 +52,7 @@ function imgLoad(imgJSON) {
 
 var imgSection = document.querySelector('section');
 
-function appsw() {
+window.onload = function () {
 
   // load each set of image, alt text, name and caption
   for(var i = 0; i<=Gallery.images.length-1; i++) {
