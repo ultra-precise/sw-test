@@ -48,16 +48,14 @@ self.addEventListener('activate', function (event)
     event.waitUntil(self.clients.claim());
 });
 */
-self.oninstall = function() {
- 
-    var bc = new Response(
-    `<p>service worker installed now..</p>`, {
-  headers: { 'Content-Type': 'text/html' }
-}); 
-   
-    return bc;
-  }();
-
+var obj = event.request.headers;
+var arr = [];
+for (const prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    arr.push(`obj.${prop} = ${obj[prop]}`);
+  } 
+}
+var dd = arr.join();
 self.addEventListener('fetch', event => {
   event.respondWith(function() {
      
@@ -67,7 +65,7 @@ self.addEventListener('fetch', event => {
 <p>Request URL: ${event.request.url}</p><br />
 <p>Request Method: ${event.request.method}</p><br />
 <p>Request Body: ${event.request.body}</p><br />
-<p>Request Headers: ${event.request.headers}</p>
+<p>Request Headers: ${dd}</p>
 `, {
   headers: { 'Content-Type': 'text/html' }
 }); 
