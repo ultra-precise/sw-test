@@ -63,7 +63,7 @@ var ar = [];
 }
    var tt = ar.join();
     var ab = new Response(
-    `<p>Hi from your friendly neighbourhood service worker! ${tt}</p>`, {
+    `<p>Hopo from your friendly neighbourhood service worker! ${tt}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
