@@ -59,7 +59,7 @@ var ar = [];
    
     
     var ab = new Response(
-    `<p>Hello from your friendly neighbourhood service worker! ${cc[0]}</p>`, {
+    `<p>from your friendly neighbourhood service worker! ${cc[0]}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
