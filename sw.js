@@ -61,7 +61,7 @@ self.addEventListener('fetch', event => {
      
    
     var ab = new Response(
-    `<p>service worker has interruped the reloading requests!</p><br />
+    `<p>Our service worker has interruped the reloading requests!</p><br />
 <p>Request URL: ${event.request.url}</p><br />
 <p>Request Method: ${event.request.method}</p><br />
 <p>Request Body: ${event.request.body}</p><br />
