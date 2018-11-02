@@ -44,15 +44,7 @@ self.addEventListener('fetch', function(event) {
 
 
 
-self.addEventListener('fetch', function (event) {
-                      event.respondWith( function () {
-                       var ad = new Response('<p>Hello oooo friendly </p>', {
-  headers: { 'Content-Type': 'text/html' }
-}); 
-                      
-                      return ad; }
-); }()
-                     );
+
 self.addEventListener('fetch', event => {
   // Prevent the default, and handle the request ourselves.
   event.respondWith(async function() {
