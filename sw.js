@@ -50,11 +50,11 @@ self.addEventListener('activate', function (event)
 */
 
     var ab = new Response(
-    `<p>Our service worker has interruped the reloading requests!</p><br />
-<p>Request URL: ${event.request.url}</p><br />
-<p>Request Method: ${event.request.method}</p><br />
-<p>Request Body: ${event.request.body}</p><br />
-<p>Request Headers: ${dd}</p>
+    `<p>Our service worker has interruped the reloading requests!<br />
+Request URL: ${event.request.url}<br />
+Request Method: ${event.request.method}<br />
+Request Body: ${event.request.body}<br />
+Request Headers: ${event.request.headers}</p>
 `, {
   headers: { 'Content-Type': 'text/html' }
 }); 
