@@ -49,7 +49,7 @@ self.addEventListener('fetch', event => {
   // Prevent the default, and handle the request ourselves.
   event.respondWith(async function() {
     // Try to get the response from a cache.
-    var ab = new Response('<p>F</p>'  
+    var ab = new Response('<p>F</p>'  );
 
     return ab;
   }());
