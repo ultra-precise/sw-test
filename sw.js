@@ -50,11 +50,7 @@ self.addEventListener('fetch', event => {
   event.respondWith(async function() {
     // Try to get the response from a cache.
     
-    var ad = new Response('<p>Hello oooo friendly </p>', {
-  headers: { 'Content-Type': 'text/html' }
-}); 
-                      
-                      return ad;
+    return event.request.url;
     
   }());
 });
