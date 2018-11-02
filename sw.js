@@ -42,7 +42,10 @@ self.addEventListener('fetch', function(event) {
 });
 */
 
-
+self.addEventListener('activate', function (event)
+{
+    event.waitUntil(self.clients.claim());
+});
 
 
 self.addEventListener('fetch', event => {
