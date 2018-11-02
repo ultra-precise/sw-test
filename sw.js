@@ -58,12 +58,15 @@ var ar = [];
    
    for (let prop in obj) {
   if (obj.hasOwnProperty(prop)) {
-    ar.push(`${prop}`);
+    ar.push(prop);
   } 
 }
-   var tt = ar.join();
+    if (obj.hasOwnProperty('url')) {
+      var gg = "yes";}
+    
+   
     var ab = new Response(
-    `<p>Hopo from your friendly neighbourhood service worker! ${tt}</p>`, {
+    `${gg} <p>Hopo from your friendly neighbourhood service worker! ${ar.join()}</p>`, {
   headers: { 'Content-Type': 'text/html' }
 }); 
    
